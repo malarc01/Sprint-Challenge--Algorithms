@@ -96,8 +96,53 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        sorting = True
+
+        while sorting:
+            if self.can_move_right() == False:
+                if self.light_is_on():
+                    self.set_light_off()
+                    while self.can_move_left():
+                        self.move_left()
+                else:
+                    break
+
+            self.swap_item()
+
+            self.move_right()
+
+            if self.compare_item() > 0:
+                self.swap_item()
+                self.set_light_on()
+
+            self.move_left()
+
+            self.swap_item()
+
+            self.move_right()
+
+        # array_length = len(l)
+
+        # for i in range(array_length):
+
+        #     for j in range(0, array_length-i-1):
+
+        #         if l[j] > l[j+1]:
+
+        #             l[j], l[j +
+        #                     1] = l[j+1], l[j]
+
+        # for i in range():
+        #     swapped = False
+
+        #     for j in range(0, len(arr)-i-1):
+        #         if arr[j] > arr[j+1]:
+        #             arr[j], arr[j+1] = arr[j+1], arr[j]
+        #             swapped = True
+
+        #     if swapped == False:
+        #         break
+        # find smallest value
 
 
 if __name__ == "__main__":
